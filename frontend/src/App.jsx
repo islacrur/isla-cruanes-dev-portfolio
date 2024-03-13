@@ -1,11 +1,12 @@
 import './App.css'
+import Navbar from './components/atoms/Navbar'
 //import Router from './configuration/Router.jsx';
 
 function App() {
   return (
     <>
       {/* <Router/> */}
-      <h1>Hello</h1>
+      <Navbar />
    </>
   );
 }
