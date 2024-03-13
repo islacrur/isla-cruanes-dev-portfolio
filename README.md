@@ -19,6 +19,7 @@ I hope you like it so far.
 - Laravel: 
 - MySQL: 
 - PHP: 
+- Node:
 
 ## 📋 **Installation guide**
 

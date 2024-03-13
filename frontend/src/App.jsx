@@ -1,10 +1,11 @@
 import './App.css'
-import Router from './configuration/Router.jsx';
+//import Router from './configuration/Router.jsx';
 
 function App() {
   return (
     <>
-      <Router/>
+      {/* <Router/> */}
+      <h1>Hello</h1>
    </>
   );
 }
