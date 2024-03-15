@@ -13,8 +13,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('short_description');
             $table->text('long_description');
-            $table->unsignedBigInteger('id_technology');
-            $table->string('image')->nullable();
+            //$table->unsignedBigInteger('id_technology')->nullable();
+           // $table->string('image')->nullable();
             $table->string('repo_link');
             $table->string('demo_link');
             $table->timestamps();
