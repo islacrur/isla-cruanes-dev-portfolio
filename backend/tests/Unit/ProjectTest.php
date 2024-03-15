@@ -4,12 +4,10 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use App\Models\Project;
+use App\Models\Technology;
 
 class ProjectTest extends TestCase
 {
-    /** 
-     * @test
-     */
     public function test_it_can_create_a_project(): void
     {
         $project = Project::create([
@@ -34,4 +32,17 @@ class ProjectTest extends TestCase
             'long_description' => 'Descripción larga del proyecto',
         ]);
     }
+   
+    public function test_it_can_attach_technologies_to_project(): void
+    {
+        $project = Project::factory()->create();
+        $technology1 = Technology::factory()->create();
+        $technology2 = Technology::factory()->create();
+
+        $project->technologies()->attach([$technology1->id, $technology2->id]);
+
+        $this->assertCount(2, $project->technologies);
+    }
 }
+
+
