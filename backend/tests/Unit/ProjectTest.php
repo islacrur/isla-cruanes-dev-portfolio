@@ -24,4 +24,14 @@ class ProjectTest extends TestCase
         $this->assertEquals('Descripción larga del proyecto', $project->long_description);
     }
 
+    public function test_it_requires_name_and_short_description()
+    {
+        $this->expectException(\Illuminate\Database\QueryException::class);
+
+        Project::create([
+            'name' => '',
+            'short_description' => '',
+            'long_description' => 'Descripción larga del proyecto',
+        ]);
+    }
 }
