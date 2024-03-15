@@ -14,7 +14,7 @@ class Project extends Model
         'image', 
         'repo_link', 
         'demo_link', 
-        'technology_id'
+        'id_technology'
     ];
 
     public function technology()
