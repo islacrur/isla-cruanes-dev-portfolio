@@ -22,4 +22,10 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
         return response()->json($project);
     }
+    public function update(Request $request, $id)
+    {
+        $project = Project::findOrFail($id);
+        $project->update($request->all());
+        return response()->json($project, 200);
+    }
 }
