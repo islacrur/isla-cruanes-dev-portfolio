@@ -37,4 +37,16 @@ class StudyTest extends TestCase
             'end_date' => now()->subYear(),
         ]);
     }
+    public function test_it_requires_start_and_end_date(): void
+    {
+        $this->expectException(\Illuminate\Database\QueryException::class);
+
+        Study::create([
+            'course_name' => 'Curso de prueba',
+            'institution_name' => 'Institución de prueba',
+            'subjects' => ['Matemáticas', 'Física', 'Química'],
+            // 'start_date' and 'end_date' not provided intentionally
+        ]);
+    }
+
 }
