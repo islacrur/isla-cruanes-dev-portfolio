@@ -28,4 +28,9 @@ class ProjectController extends Controller
         $project->update($request->all());
         return response()->json($project, 200);
     }
+    public function destroy($id)
+    {
+        Project::findOrFail($id)->delete();
+        return response()->json(null, 204);
+    }
 }
