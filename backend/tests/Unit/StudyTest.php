@@ -24,5 +24,17 @@ class StudyTest extends TestCase
         $this->assertEquals(now()->subYears(2)->format('Y-m-d'), $study->start_date->format('Y-m-d'));
         $this->assertEquals(now()->subYear()->format('Y-m-d'), $study->end_date->format('Y-m-d'));
     }
-    
+
+    public function test_it_requires_course_name_and_institution_name(): void
+    {
+        $this->expectException(\Illuminate\Database\QueryException::class);
+
+        Study::create([
+            'course_name' => '',
+            'institution_name' => '',
+            'subjects' => ['Matemáticas', 'Física', 'Química'],
+            'start_date' => now()->subYears(2),
+            'end_date' => now()->subYear(),
+        ]);
+    }
 }
