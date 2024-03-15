@@ -17,5 +17,9 @@ class ProjectController extends Controller
         $project = Project::create($request->all());
         return response()->json($project, 201);
     }
-   
+    public function show($id)
+    {
+        $project = Project::findOrFail($id);
+        return response()->json($project);
+    }
 }
