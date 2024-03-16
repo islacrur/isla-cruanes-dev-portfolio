@@ -1,11 +1,13 @@
 import React from 'react'
 import Navbar from '../components/atoms/Navbar'
+import HeadingSection from '../components/atoms/HeadingSection'
 
 const Education = () => {
   return (
     <>
     <Navbar/>
-    <div>Education</div>
+    <HeadingSection title="Education"/>
+
     </>
   )
 }

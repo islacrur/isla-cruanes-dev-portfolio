@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../components/atoms/Navbar'
+import HeadingSection from '../components/atoms/HeadingSection'
 
 const Home = () => {
   return (
     <>
-    <Navbar />
-    
+
+    <HeadingSection title="Full Stack Developer"/>
     </>
   )
 }
