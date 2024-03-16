@@ -1,12 +1,15 @@
 import './App.css'
-import Button from './components/atoms/Button';
+import Card from './components/atoms/Card';
 //import Router from './configuration/Router.jsx';
 
 function App() {
   return (
     <>
       {/* <Router/> */}
-      <Button />
+      <Card 
+        image='https://picsum.photos/300/150'
+        title="Covid Tracker" 
+        description="A React project with API consume including the Covid DATA" />
 
    </>
   );
