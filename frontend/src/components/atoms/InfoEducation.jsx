@@ -1,19 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const InfoEducation = () => {
+
+const InfoEducation = ({course, center, studies, date}) => {
   const educacion = [
     {
-      curso: "Desarrollo Full Stack",
-      centro: "Factoría F5",
+      curso: {course},
+      centro: {center},
       estudios: [
-        "Programación Frontend con HTML, CSS y JavaScript",
-        "Programación Backend con PHP",
-        "Bases de datos con MySQL",
-        "Frameworks React y Laravel",
+        {studies}
       ],
-      fecha: "octubre 2023 - presente",
+      fecha: {date},
     }
-    // Agrega más objetos de educación según sea necesario
   ];
 
   const educacionJSON = JSON.stringify(educacion, null, 2);
@@ -24,5 +22,12 @@ const InfoEducation = () => {
     </pre>
   );
 }
+
+InfoEducation.propTypes = {
+    course: PropTypes.string.isRequired,
+    center: PropTypes.string.isRequired,
+    studies: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired
+  };
 
 export default InfoEducation;
