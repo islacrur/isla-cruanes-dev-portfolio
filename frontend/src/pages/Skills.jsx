@@ -2,15 +2,13 @@ import React from 'react'
 import Navbar from '../components/atoms/Navbar'
 import HeadingSection from '../components/atoms/HeadingSection'
 
-const Projects = () => {
+const Skills = () => {
   return (
     <>
     <Navbar/>
-    <HeadingSection title="Projects"/>
-
-   
+    <HeadingSection title="Skills"/>
     </>
   )
 }
 
-export default Projects
+export default Skills
