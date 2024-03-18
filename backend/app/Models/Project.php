@@ -14,11 +14,10 @@ class Project extends Model
         'image', 
         'repo_link', 
         'demo_link', 
-        'id_technology'
     ];
 
     public function technology()
     {
-        return $this->belongsTo(Technology::class);
+        return $this->hasMany(Technology::class);
     }
 }
