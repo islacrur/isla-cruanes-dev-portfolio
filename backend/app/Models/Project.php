@@ -1,8 +1,6 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
@@ -21,3 +19,4 @@ class Project extends Model
         return $this->belongsToMany(Technology::class, 'projects_technologies', 'id_project', 'id_technology');
     }
 }
+
