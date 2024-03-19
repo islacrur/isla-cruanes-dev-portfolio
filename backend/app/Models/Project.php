@@ -18,6 +18,6 @@ class Project extends Model
 
     public function technology()
     {
-        return $this->hasMany(Technology::class);
+        return $this->hasMany(Technology::class, 'project_technologies');
     }
 }
