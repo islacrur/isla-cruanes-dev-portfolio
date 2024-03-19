@@ -9,7 +9,8 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
+        //$projects = Project::all();
+        $projects = Project::with('technologies')->get();
         return response()->json($projects, 200);
     }
     public function store(Request $request)
@@ -17,9 +18,10 @@ class ProjectController extends Controller
         $project = Project::create($request->all());
         return response()->json($project, 201);
     }
-    public function show($id)
+    public function show(Project $project)
     {
-        $project = Project::findOrFail($id);
+        //$project = Project::findOrFail($id);
+        $project->load('technologies');
         return response()->json($project);
     }
     public function update(Request $request, $id)

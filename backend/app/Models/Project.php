@@ -16,8 +16,8 @@ class Project extends Model
         'demo_link', 
     ];
 
-    public function technology()
+    public function technologies()
     {
-        return $this->hasMany(Technology::class, 'project_technologies');
+        return $this->belongsToMany(Technology::class, 'projects_technologies', 'id_project', 'id_technology');
     }
 }
