@@ -9,8 +9,25 @@ class ProjectController extends Controller
 {
     public function index()
     {
+        // Obtener todos los proyectos
         $projects = Project::all();
-        return response()->json($projects, 200);
+
+        // Iterar sobre cada proyecto para filtrar las tecnologías asociadas
+        $projects->each(function ($project) {
+            // Obtener las tecnologías asociadas excluyendo la información de pivot
+            $technologies = $project->technologies->map(function ($technology) {
+                return [
+                    'id' => $technology->id,
+                    'name' => $technology->name
+                ];
+            });
+
+            // Reemplazar las tecnologías asociadas con las filtradas
+            $project->setRelation('technologies', $technologies);
+        });
+
+        // Devolver la respuesta JSON con los proyectos y las tecnologías filtradas
+        return response()->json($projects);
     }
     public function store(Request $request)
     {
@@ -19,7 +36,21 @@ class ProjectController extends Controller
     }
     public function show($id)
     {
+        // Buscar el proyecto por su ID
         $project = Project::findOrFail($id);
+
+        // Obtener las tecnologías asociadas excluyendo la información de pivot
+        $technologies = $project->technologies->map(function ($technology) {
+            return [
+                'id' => $technology->id,
+                'name' => $technology->name
+            ];
+        });
+
+        // Reemplazar las tecnologías asociadas con las filtradas
+        $project->setRelation('technologies', $technologies);
+
+        // Devolver la respuesta JSON con el proyecto y las tecnologías filtradas
         return response()->json($project);
     }
     public function update(Request $request, $id)

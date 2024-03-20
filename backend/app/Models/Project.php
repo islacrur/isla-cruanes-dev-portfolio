@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -7,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+    use HasFactory;
+    
     protected $fillable = [
         'name', 
         'short_description', 
@@ -14,11 +15,11 @@ class Project extends Model
         'image', 
         'repo_link', 
         'demo_link', 
-        'id_technology'
     ];
 
-    public function technology()
+    public function technologies()
     {
-        return $this->belongsTo(Technology::class);
+        return $this->belongsToMany(Technology::class, 'projects_technologies', 'id_project', 'id_technology');
     }
 }
+
