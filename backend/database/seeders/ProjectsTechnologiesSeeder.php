@@ -9,21 +9,21 @@ class ProjectsTechnologiesSeeder extends Seeder
 {
     public function run()
     {
-        $totalProjects = DB::table('projects')->count();
-        $totalTechnologies = DB::table('technologies')->count();
+        $projects = DB::table('projects')->pluck('id');
+        $technologies = DB::table('technologies')->pluck('id');
 
-        $totalRelationships = 10; 
+        foreach ($projects as $projectId) {
+            $technologiesCount = rand(1, count($technologies));
+            $selectedTechnologies = $technologies->random($technologiesCount);
 
-        for ($i = 0; $i < $totalRelationships; $i++) {
-            $projectId = rand(1, $totalProjects);
-            $technologyId = rand(1, $totalTechnologies);
-
-            DB::table('projects_technologies')->insert([
-                'id_project' => $projectId,
-                'id_technology' => $technologyId,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
+            foreach ($selectedTechnologies as $technologyId) {
+                DB::table('projects_technologies')->insert([
+                    'id_project' => $projectId,
+                    'id_technology' => $technologyId,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
         }
     }
 }
