@@ -14,12 +14,15 @@ I hope you like it so far.
 <img src="https://skillicons.dev/icons?i=html,css,tailwind,js,react,vite,php,laravel,mysql,nodejs)](https://skillicons.dev"/>
 
 ### Versions
-- React: 
-- Vite: 
-- Laravel: 
-- MySQL: 
-- PHP: 
-- Node:
+- React: 18.2.0
+- React-router-dom: 6.22.3
+- Vite: 5.1.6
+- Tailwindcss: 3.4.1
+- Laravel: 10.10
+- MySQL: 5.7.39
+- PHP: 8.1
+- PHP Unit: 10.1
+- Node: 20.9.0
 
 ## 📋 **Installation guide**
 
@@ -35,6 +38,7 @@ Good luck 🍀
 git clone https://github.com/islacrur/isla-cruanes-dev-portfolio.git
 ```
 2. Navigate to the "frontend" directory.
+
 3. Install project dependencies with 
 ```bash
 npm install
@@ -44,9 +48,13 @@ npm install
 npm start
 ```
 The application should now be running on `localhost:3000`.
+
 5. Download the Node.js installer from [officialwebsite](https://nodejs.org/en) and choose the version that suits your operating system (Windows, macOS, or Linux).
+
 6. Run the installer and follow the on-screen instructions. Accept the license terms and choose the installation location. You can also customize the components to be installed, such as npm, the Node.js package manager.
+
 7. Once the installation is complete, verify that Node.js and npm have been installed correctly by opening a terminal or command prompt and running the commands node -v and npm -v. You should see the versions of Node.js and npm you have installed.
+
 9. Navigate to the "backend" directory.
 ```bash
 cd backend
@@ -56,11 +64,13 @@ cd backend
 composer install
 ```
 11. Create a database named "portfolio" in phpMyAdmin.
+
 12. Then copy the Configuration File:
 ```bash
 cp .env.example . env.
 ```
  Configure your file . env with details of your environment, such as the connection to the database.
+
 13. Then you must generate the Application Key with the following command 
 ```bash
 php artisan key:generate
@@ -70,11 +80,13 @@ php artisan key:generate
 php artisan migrate --seed
 ```
  This will configure the database structure, create the necessary tables and populate them with the test data that was preset in the project.
+
 15. Start Development Server: Run the following command 
 ```bash
 php artisan serve
 ```
  The application will be available in http://localhost:8000 (or on the port specified by the console).
+
 16. In another terminal you must Compile Assets with the command 
 ```bash
 npm run dev
@@ -82,7 +94,9 @@ npm run dev
  This command will compile the assets and place them in the appropriate folder for use in the application.
 
 17. Access to the App: Open your browser and visit http://localhost:8000. You should see your application running.
+
 18. Access your project in the browser: Open your web browser and visit the project path with localhost first.
+
 19. Enjoy it.
 
 ## ✒️ **Author**
