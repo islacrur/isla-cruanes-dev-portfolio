@@ -11,18 +11,19 @@ I hope you like it so far.
 - **User-Friendly Interface:** The user interface is intuitive and easy to use, providing a smooth experience for users.
 
 ## 🛠️  **Technologies**
-<img src="https://skillicons.dev/icons?i=html,css,tailwind,js,react,vite,php,laravel,mysql,nodejs)](https://skillicons.dev"/>
+<img src="https://skillicons.dev/icons?i=html,css,js,react,vite,tailwind,php,laravel,mysql,nodejs)](https://skillicons.dev"/>
 
 ### Versions
 - React: 18.2.0
 - React-router-dom: 6.22.3
 - Vite: 5.1.6
 - Tailwindcss: 3.4.1
-- Laravel: 10.10
-- MySQL: 5.7.39
 - PHP: 8.1
 - PHP Unit: 10.1
+- Laravel: 10.10
+- MySQL: 5.7.39
 - Node: 20.9.0
+- Composer: 2.7.2
 
 ## 📋 **Installation guide**
 
@@ -101,6 +102,6 @@ npm run dev
 
 ## ✒️ **Author**
 
-This project has been created me:
+This project has been created by me:
 
 🎨 [Isla Cruañes](https://github.com/islacrur)
